@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Spartacus | 太阳系最好用的博客管理系统</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link href="/summernote/summernote.css" rel="stylesheet">
+    <link href="/summernote/summernote-bs4.css" rel="stylesheet">
+    <link href="/summernote/plugin/emoji/summernote-ext-emoji-ajax.css" rel="stylesheet">
+
+    <style>
+　　　　.img_div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
+        .mask {
+            position: absolute;
+            /*top: 7%;*/
+            /*left: 0;*/
+            width: 200px;
+            height: 200px;
+            /*background: rgba(41, 41, 41, 0.7);*/
+            color: #ffffff;
+            border-radius: 100%;
+            border-bottom: 100px solid rgba(41, 41, 41, 0.7);
+            text-align: center;
+            opacity: 0;
+        }
+        .img_div a:hover .mask {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-sm-4" style="padding-right: 2.5px;">
+                <div class="ibox float-e-margins" style="margin-bottom: 0px;">
+                    <div>
+                        <div class="ibox-title">
+                            <h5>修改头像</h5>
+                        </div>
+                        <div id="modify_headimg_div" class="ibox-content no-padding border-left-right">
+                            <div id="using_id" class="col-sm-9" style="float: left; text-align: center">
+                                <div class="img_div">
+                                    <img id="headimg_id" alt="image" class="img-circle" style="margin-top: 5%" width="200px" height="200px" src="img/profile_big.jpg">
+
+                                    <a href="javscript:void(0);" onclick="selectHeadImg();">
+                                        <div id="mask_id" class="mask">
+                                            <h4 style="position: absolute; top: 130%; left: 36%;">上传头像</h4>
+                                            <input type="file" id="file_id" name="file" style="display:none;"/>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div style="padding: 20px 0px 0px 0px;text-align: center;">
+                                    <button type="button" class="btn btn-white btn-sm" style="margin-right: 5px;" onclick=""><i class="fa fa-check-square"></i> 确定 </button>
+                                    <button type="button" class="btn btn-white btn-sm" style="margin-left: 5px;" onclick=""><i class="fa fa-window-close"></i> 取消 </button>
+                                </div>
+                            </div>
+
+                            <div id="historys_id" class="col-sm-3 pull-right" style="float: right; text-align: right">
+                                <a title="历史头像1" class="pull-right"><img class="img-history img-responsive" style="width: 60px; height: auto;" src="img/profile_big.jpg"></a><br>
+                                <a title="历史头像2" class="pull-right"><img class="img-history img-responsive" style="width: 60px; height: auto;" src="img/50.png"></a><br>
+                                <a title="历史头像3" class="pull-right"><img class="img-history img-responsive" style="width: 60px; height: auto;" src="img/a1.jpg"></a><br>
+                                <a title="历史头像4" class="pull-right"><img class="img-history img-responsive" style="width: 60px; height: auto;" src="img/a2.jpg"></a><br>
+                                <a title="历史头像5" class="pull-right"><img class="img-history img-responsive" style="width: 60px; height: auto;" src="img/a3.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox float-e-margins" style="margin-bottom: 0px;">
+                    <div>
+                        <div class="ibox-title">
+                            <h5>修改账户</h5>
+                        </div>
+                        <div id="modify_accout_div" class="ibox-content no-padding border-left-right">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div style="padding:10px 0px 0px 30px">
+                                        <label>昵称</label>
+                                        <input id="nickname_id" type="text" value="C" class="form-control">
+                                    </div>
+                                    <div style="padding:5px 0px 0px 30px">
+                                        <label>原始密码</label>
+                                        <input type="password" value="" class="form-control">
+                                    </div>
+                                    <div style="padding:5px 0px 0px 30px">
+                                        <label>新密码</label>
+                                        <input type="password" value="" class="form-control">
+                                    </div>
+                                    <div style="padding:5px 0px 0px 30px">
+                                        <label>确认新密码</label>
+                                        <input type="password" value="" class="form-control">
+                                    </div>
+                                    <div style="padding:20px 0px 0px 0px; text-align: center;">
+                                        <button type="button" class="btn btn-white btn-sm" style="margin-right: 5px;" onclick=""><i class="fa fa-check-square"></i> 确定 </button>
+                                        <button type="button" class="btn btn-white btn-sm" style="margin-left: 5px;" onclick=""><i class="fa fa-window-close"></i> 取消 </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-8" style="padding-left: 2.5px;">
+                <div class="ibox float-e-margins" style="margin-bottom: 0px;">
+                    <div class="ibox-title">
+                        <h5>关于博主</h5>
+                        <button id="edit_id" type="button" class="btn btn-primary btn-sm pull-right" onclick="edit()" style="padding: 2px 6px 2px 6px;">编&nbsp;&nbsp;辑</button>
+                        <button id="cancelEdit_id" type="button" class="btn btn-primary btn-sm pull-right" onclick="cancelEdit()" style="padding: 2px 6px 2px 6px; display: none; margin-left: 5px;">取&nbsp;&nbsp;消</button>
+                        <button id="update_id" type="button" class="btn btn-primary btn-sm pull-right" onclick="update()" style="padding: 2px 6px 2px 6px; display: none; margin-right: 5px;">保&nbsp;&nbsp;存</button>
+                    </div>
+                    <div id="modify_about_div" class="ibox-content" style="overflow: auto;">
+                        <div id="summernote" class="wrapper">
+                            <strong>&nbsp;&nbsp;&nbsp;&nbsp;大家好，我叫奥特曼</strong>
+                            <br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我来自中国，我爱中国
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p1.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            我是一个程序猿，我的爱好是乱敲代码
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p3.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            每个人都有自己的梦想，我的梦想就是可以一直敲代码
+
+                            <strong>&nbsp;&nbsp;&nbsp;&nbsp;大家好，我叫奥特曼</strong>
+                            <br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我来自中国，我爱中国
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p1.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            我是一个程序猿，我的爱好是乱敲代码
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p3.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            每个人都有自己的梦想，我的梦想就是可以一直敲代码
+
+                            <strong>&nbsp;&nbsp;&nbsp;&nbsp;大家好，我叫奥特曼</strong>
+                            <br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我来自中国，我爱中国
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p1.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            我是一个程序猿，我的爱好是乱敲代码
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p3.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            每个人都有自己的梦想，我的梦想就是可以一直敲代码
+
+                            <strong>&nbsp;&nbsp;&nbsp;&nbsp;大家好，我叫奥特曼</strong>
+                            <br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我来自中国，我爱中国
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p1.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            我是一个程序猿，我的爱好是乱敲代码
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p3.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            每个人都有自己的梦想，我的梦想就是可以一直敲代码
+
+                            <strong>&nbsp;&nbsp;&nbsp;&nbsp;大家好，我叫奥特曼</strong>
+                            <br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我来自中国，我爱中国
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p1.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            我是一个程序猿，我的爱好是乱敲代码
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="image" src="img/p3.jpg">
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            每个人都有自己的梦想，我的梦想就是可以一直敲代码
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="js/content.js?v=1.0.0"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- SUMMERNOTE -->
+    <script src="/summernote/summernote.js"></script>
+    <script src="/summernote/lang/summernote-zh-CN.js"></script>
+    <script src="/summernote/plugin/emoji/summernote-ext-emoji-ajax.js"></script>
+
+<script>
+    var global_content;
+
+    var resizeContainer = function () {
+        var using_div = document.getElementById('using_id');
+        var historys_div = document.getElementById('historys_id');
+
+        var maxHeight = using_div.clientHeight;
+        historys_div.style.height = maxHeight+'px';
+
+        var av_height = maxHeight / $(".img-history").length;
+        $(".img-history").each(function () {
+            $(this).attr("height", av_height + 'px');
+        });
+
+        //设置头像遮罩的位置
+        var left = $('#headimg_id').offset().left;
+        var top = $('#headimg_id').offset().top;
+        $('#mask_id').offset({'left':left, 'top':top});
+
+        var modify_headimg_div = document.getElementById('modify_headimg_div');
+        var modify_accout_div = document.getElementById('modify_accout_div');
+        var modify_about_div = document.getElementById('modify_about_div');
+        var ibox_title_div = document.getElementsByClassName("ibox-title")[0];
+        var total_height = document.body.clientHeight - 48;
+        modify_headimg_div.style.height = (total_height / 2 - ibox_title_div.clientHeight) + 'px';
+        modify_accout_div.style.height = (total_height / 2 - ibox_title_div.clientHeight - 4) + 'px';
+        modify_about_div.style.height = (total_height - ibox_title_div.clientHeight) + 'px';
+    };
+    resizeContainer();
+    //监听窗口大小变化
+    window.onresize = function () {
+        resizeContainer();
+    };
+
+    var nickname = localStorage.getItem("nickname");
+    var headImg = localStorage.getItem("headImg");
+    $("#headimg_id").attr("src", headImg);
+    $("#nickname_id").attr("value", nickname);
+
+    function selectHeadImg(){
+        document.getElementById("file_id").click();
+    }
+
+    $('#file_id').change(function(){
+        $("#headimg_id").attr("src", URL.createObjectURL($(this)[0].files[0]));
+    });
+
+    $('.img-history').click(function () {
+        $("#headimg_id").attr("src", $(this).attr('src'));
+    });
+
+///////////////////
+function edit() {
+    global_content = $('#summernote').html();
+    var modify_about_div = document.getElementById('modify_about_div');
+
+    $("#modify_about_div").addClass("no-padding");
+    $('#summernote').summernote({
+        lang: 'zh-CN',
+        height: modify_about_div.clientHeight - 46,   //set editable area's height
+        codemirror: { // codemirror options
+            theme: 'monokai'
+        },
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['style']],
+            ['font', ['fontname', 'fontsize', 'color']],
+            ['fontstyle', ['italic', 'bold', 'underline', 'height', 'clear']],
+            ['paragrah', ['ul', 'ol', 'strikethrough', 'superscript', 'subscript', 'paragraph']],
+            ['insert', ['picture', 'link', 'video', 'table', 'hr', 'emoji', 'codeview']],
+            ['misc', ['undo', 'redo', 'help', 'fullscreen']]
+        ],
+        focus: true,
+        //调用图片上传
+        callbacks: {
+            onImageUpload: function (files) {
+                uploadFile('#summernote', files[0]);
+            }
+        }
+    });
+
+    $("#edit_id").css("display", "none");
+    $("#cancelEdit_id").css("display", "block");
+    $("#update_id").css("display", "block");
+}
+
+function uploadFile(summernoteId, file) {
+    // 构造Form表单
+    var fromData = new FormData();
+    fromData.append("file", file);
+    $.ajax({
+        data: fromData,
+        type: "POST",
+        url: "/common/fileUpload",
+        cache: false,
+        contentType: false, //这里千万不要设置，否则无法上传
+        processData: false,
+        success: function(result) {
+            if(result.code == 0) {
+                parent.layer.msg('上传成功！', {
+                    icon: 1,
+                    time:1000
+                });
+                $(summernoteId).summernote('insertImage', result.data);
+            } else {
+                parent.layer.msg('上传失败！', {
+                    icon: 2,
+                    time:1000
+                });
+            }
+        }
+    });
+}
+
+function cancelEdit() {
+    $("#modify_about_div").removeClass("no-padding");
+
+    $('#summernote').summernote('destroy');
+    $('#summernote').html(global_content);
+
+    $("#edit_id").css("display", "block");
+    $("#cancelEdit_id").css("display", "none");
+    $("#update_id").css("display", "none");
+}
+
+function checkNull() {
+    var re1 = /(^\s*)|(\s*$)|( )/g; //空格正则表达式
+    var re2 = /<[^>]+>/g; //html标签正则表达式
+    var re3 = /&nbsp;/g; //&nbsp;正则表达式
+
+    var content = $('#summernote').summernote('code');
+
+    if(content.replace(re1,'').replace(re2,'').replace(re3,'')=='') {
+        parent.layer.msg('文章内容不能为空！', {
+            icon: 2,
+            time:1000
+        });
+        return false;
+    }
+    return true;
+}
+
+
+function update() {
+    if(checkNull() == true) {
+        var content = $('#summernote').summernote('code');
+        var urlStr = "/article/update";
+
+        ////
+        $('#summernote').summernote('destroy');
+        $('#summernote').html(content);
+        $("#edit_id").css("display", "block");
+        $("#cancelEdit_id").css("display", "none");
+        $("#update_id").css("display", "none");
+        parent.layer.msg('保存成功！', {
+            icon: 1,
+            time:1000
+        });
+        ////
+
+        /*$.ajax({
+            type : "POST",
+            url : urlStr,
+            async : false,
+            data : { //使用Json格式进行透传
+                "id" : article_id,
+                "title" : $('#title_id').val(),
+                "labels" : $('#labels_id').val(),
+                "author" : $('#author_id').val(),
+                "publishTime" : $('#publishTime_id').val(),
+                "cname" : $('#cname_id').val(),
+                "fromWhere" : $('#fromWhere_id').val(),
+                "content" : content
+            },
+            dataType:"json",
+            success : function(result) {
+                if (result.code==0) {
+                    parent.layer.msg('保存成功！', {
+                        icon: 1,
+                        time:1000
+                    });
+
+                    $("#modify_about_div").removeClass("no-padding");
+
+                    $('#summernote').summernote('destroy');
+                    $('#summernote').html(content);
+
+                    $("#edit_id").css("display", "block");
+                    $("#cancelEdit_id").css("display", "none");
+                    $("#update_id").css("display", "none");
+                } else {
+                    parent.layer.msg('保存失败！', {
+                        icon: 2,
+                        time:1000
+                    });
+                }
+            }
+        });*/
+    }
+}
+</script>
+
+</body>
+
+</html>

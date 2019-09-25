@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    
+  <title>Spartacus | 太阳系最好用的博客管理系统</title>
+<!--	<link rel="shortcut icon" href="/img/favicon.ico">-->
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+	
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	
+	<link rel="stylesheet" href="/login/style.css" media="all"/>
+	
+	
+<script type="text/css">
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) { select:focus, textarea:focus, input:focus { font-size: 16px !important; } }
+</script>
+
+</head>
+  
+ <body>
+	
+  <table height="100%" width="100%" style="border-spacing: 0px">
+	<tr>
+		<td align="center" valign="middle">
+		<h1>Spartacus</h1>
+		<div class="container">
+	    <div class="contact-form">
+		 	<div class="signin" style="padding:20px 20px 20px 20px;">
+	     	<form id="shareForm" action="/authentication/form" method="post" onsubmit="return onCheck();">
+		      <p>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      	<font id="tips" color="red" style="display: none;">登录失败，请检查用户名、密码、验证码是否正确！</font>
+			  	</p>
+		      <input type="text" id="usernameid" class="user" name="username" autocomplete="new-password" style="-webkit-appearance: none" />
+			  
+				  <p>Password</p>
+				  <input type="password" id="passwordid" class="pass" name="password" autocomplete="new-password" style="-webkit-appearance: none" />
+        	<p>
+		        <table width="100%">
+		         	<tr>
+		         		<td style="font-family: Oswald-Regular; color: #C6CACD">Verify Code</td>
+		         		<td>
+		         			<a href="javascript:_change()" style="text-decoration: underline; padding-right:10px">
+		         				<img id="verifycodeimgid" src="/code/image?width=75&height=28" style="padding-right:10px"/>换一张
+		         			</a>
+		         		</td>
+		         	</tr>
+		        </table>
+		     	</p>
+	        <input type="text" id="verifycodeid" name="imageCode" autocomplete="new-password" style="-webkit-appearance: none; width: 100%;background: #74797C url('')" />
+	      	<input id="remember-me" name="remember-me" type="checkbox"/> Remember me
+	      	<input type="submit" id="submitId" value="Login" style="-webkit-appearance: none" />
+		 		</form>
+		 	</div>
+		 </div>	 
+		</div>
+	  </td>
+  </tr>
+ </table>
+ 
+ 
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/security.js"></script>
+<script src="js/common.js"></script>
+
+
+<script>
+
+window.onload = function() {
+	document.oncontextmenu = function(){return false;};
+	
+	$("#usernameid").focus();
+	
+	if(getUrlParam('error') != null && getUrlParam('error') === "true") {
+		$("#tips").removeAttr("style");
+	} else {
+		$("#tips").attr("style", "display: none;");
+	}
+};
+
+function _change() {
+	$("#verifycodeimgid").attr("src", "/code/image?width=75&height=28?" + new Date().getTime());
+}
+
+function onCheck() {
+	var re = /(^\s*)|(\s*$)|( )/g; //空格正则表达式
+	var username = $("#usernameid").val();
+	var password = $("#passwordid").val();
+	var verifycode = $("#verifycodeid").val();
+	
+	if(username.replace(re,'')=='') {
+		parent.layer.msg('用户名不能为空！', {
+		    icon: 2,
+			time:1000
+		});
+		return false;
+	}
+	if(password.replace(re,'')=='') {
+		parent.layer.msg('密码不能为空！', {
+		    icon: 2,
+			time:1000
+		});
+		return false;
+	}
+	if(verifycode.replace(re,'')=='') {
+		parent.layer.msg('验证码不能为空！', {
+		    icon: 2,
+			time:1000
+		});
+		return false;
+	}
+	
+	// 异步获取公钥
+	var checkFlag = false;
+	$.ajax({
+		url: "/getPublicKey",
+		type: "get",
+		async: false, //使用同步的方式,true为异步方式
+		success: function(result) {
+			if(result != null && result.code == 0) {
+				// 加密模
+				var modulus = result.data.modulus;
+				// 公钥指数
+				var public_exponent = result.data.public_exponent;
+				// 通过模和公钥参数获取公钥
+				var key = new RSAUtils.getKeyPair(public_exponent, "", modulus);
+				// 颠倒密码的顺序，要不然后解密后会发现密码顺序是反的
+				var reversedPwd = password.split("").reverse().join("");
+				// 对密码进行加密
+				var encrypedPwd = RSAUtils.encryptedString(key, reversedPwd);
+				// 赋值
+				$('#passwordid').val(encrypedPwd);
+				checkFlag = true;
+			} else {
+				parent.layer.msg('获取公钥失败！', {
+			    icon: 2,
+					time:1000
+				});
+				checkFlag = false;
+			}
+		}
+	})
+	
+	return checkFlag;
+}
+
+
+</script>
+
+ </body>
+</html>

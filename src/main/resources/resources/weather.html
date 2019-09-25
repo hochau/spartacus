@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+	<head>
+
+		<title>Spartacus | 太阳系最好用的博客管理系统</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="keywords" content="天气">
+		<meta name="description" content="天气">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备 viewport -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+		<!-- 360浏览器默认使用Webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止百度SiteAPP转码 -->
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+		<link rel="icon" type="image/png" href="http://demo.admui.com/public/images/favicon.png">
+		<meta name="mobile-web-app-capable" content="yes">
+		<!-- Safari浏览器添加到主屏幕（IOS） -->
+		<link rel="icon" sizes="192x192" href="http://demo.admui.com/public/images/apple-touch-icon.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Admui">
+		<!-- Win8标题栏及ICON图标 -->
+		<link rel="apple-touch-icon-precomposed" href="http://demo.admui.com/public/images/apple-touch-icon.png">
+		<meta name="msapplication-TileImage" content="/public/images/app-icon72x72@2x.png">
+		<meta name="msapplication-TileColor" content="#62a8ea">
+		
+		<!-- 样式 -->
+		<link rel="stylesheet" href="/css/font-awesome.css?v=4.4.0">
+		<link rel="stylesheet" href="/weather/bootstrap.css">
+		<link rel="stylesheet" href="/weather/site.css" id="siteStyle">
+		<link rel="stylesheet" href="/weather/weather-icons.css">
+		<link rel="stylesheet" href="/weather/weather.css">
+		<link rel="stylesheet" href="/css/plugins/blueimp/css/blueimp-gallery.min.css">
+		
+	</head>
+
+	<body id="body_id">
+
+		<main class="site-page">
+			<div class="page-container" id="admui-pageContent">
+
+				<div class="page animation-fade">
+					<div class="page-content page-content-example container-fluid">
+						<div class="row">
+							<div class="col-xs-12">
+
+	<div id="outer_div_id" class="widget widget-shadow weather">
+		<div id="weather_div_cover_id" class="widget-header cover overlay">
+			<img id="weather_img_id" class="cover-image img-responsive" src="/weather/beach.jpg" alt="...">
+			<div class="overlay-panel">
+				<span id="city_name_id" class="font-size-40 white">深圳</span>
+				<div class="weather-location input-search pull-right margin-top-10">
+					<input id="search_city_input" type="text" class="form-control input-sm grey-200" placeholder="搜索城市">
+					<button id="search_city_button" type="submit" class="input-search-btn">
+                        <i class="fa fa-search grey-400" aria-hidden="true"></i>
+                    </button>
+				</div>
+			</div>
+		</div>
+		<div id="weather_div_footer_id" class="widget-footer">
+				<div class="col-md-3 col-sm-5 padding-left-30 padding-vertical-30" style="float: left;">
+					<div id="today" class="row">
+						<div class="col-xs-5" style="float: left;">
+							<div class="vertical-align">
+								<i class="vertical-align-middle font-size-50 margin-top-20">
+									<img height="50" src="/weather/icons/00.png">
+									<font size="4" color="#2298D9">~</font>
+									<img height="50" src="/weather/icons/00.png">
+								</i> </div>
+						</div>
+						<div class="col-xs-7" style="float: left;">
+							<span class="font-size-40 blue-800">27℃</span>
+							<span class="font-size-18 blue-grey-700">/</span>
+							<span class="font-size-18 blue-grey-700">27℃~34℃</span>
+							<p class="font-size-14 margin-bottom-0">晴天&nbsp;&nbsp;2018年05月14日&nbsp;星期一</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-9 col-sm-7">
+					<div id="future" class="row no-space text-center">
+						<div class="col-xs-2">
+							<div class="weather-day vertical-align">
+								<div class="vertical-align-middle font-size-16">
+									<div class="margin-bottom-10">星期二</div>
+									<i class="font-size-24 margin-bottom-10">
+										<img height="50" src="/weather/icons/00.png">
+										<font size='4' color='#2298D9'>~</font>
+										<img height="50" src="/weather/icons/00.png">
+									</i>
+									<div>晴天&nbsp;17℃~20℃</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="weather-day vertical-align">
+								<div class="vertical-align-middle font-size-16">
+									<div class="margin-bottom-10">星期三</div>
+									<i class="font-size-24 margin-bottom-10">
+										<img height="50" src="/weather/icons/00.png">
+										<font size='4' color='#2298D9'>~</font>
+										<img height="50" src="/weather/icons/00.png">
+									</i>
+									<div>晴天&nbsp;17℃~20℃</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="weather-day vertical-align">
+								<div class="vertical-align-middle font-size-16">
+									<div class="margin-bottom-10">星期四</div>
+									<i class="font-size-24 margin-bottom-10">
+										<img height="50" src="/weather/icons/00.png">
+										<font size='4' color='#2298D9'>~</font>
+										<img height="50" src="/weather/icons/00.png">
+									</i>
+									<div>晴天&nbsp;17℃~20℃</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="weather-day vertical-align">
+								<div class="vertical-align-middle font-size-16">
+									<div class="margin-bottom-10">星期五</div>
+									<i class="font-size-24 margin-bottom-10">
+										<img height="50" src="/weather/icons/00.png">
+										<font size='4' color='#2298D9'>~</font>
+										<img height="50" src="/weather/icons/00.png">
+									</i>
+									<div>晴天&nbsp;17℃~20℃</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="weather-day vertical-align">
+								<div class="vertical-align-middle font-size-16">
+									<div class="margin-bottom-10">星期六</div>
+									<i class="font-size-24 margin-bottom-10">
+										<img height="50" src="/weather/icons/00.png">
+										<font size='4' color='#2298D9'>~</font>
+										<img height="50" src="/weather/icons/00.png">
+									</i>
+									<div>晴天&nbsp;17℃~20℃</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="weather-day vertical-align">
+								<div class="vertical-align-middle font-size-16">
+									<div class="margin-bottom-10">星期日</div>
+									<i class="font-size-24 margin-bottom-10">
+										<img height="50" src="/weather/icons/00.png">
+										<font size='4' color='#2298D9'>~</font>
+										<img height="50" src="/weather/icons/00.png">
+									</i>
+									<div>晴天&nbsp;17℃~20℃</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--<i class="wi-day-cloudy"></i>
+	<i class="wi-day-cloudy-gusts"></i>
+	<i class="wi-day-cloudy-windy"></i>
+	<i class="wi-day-fog"></i>
+	<i class="wi-day-hail"></i>
+	<i class="wi-day-haze"></i>
+	<i class="wi-day-lightning"></i>
+	<i class="wi-day-rain"></i>
+	<i class="wi-day-rain-mix"></i>
+	<i class="wi-day-rain-wind"></i>
+	<i class="wi-day-showers"></i>
+	<i class="wi-day-sleet"></i>
+	<i class="wi-day-sleet-storm"></i>
+	<i class="wi-day-snow"></i>
+	<i class="wi-day-snow-thunderstorm"></i>
+	<i class="wi-day-snow-wind"></i>
+	<i class="wi-day-sprinkle"></i>
+	<i class="wi-day-storm-showers"></i>
+	<i class="wi-day-sunny"></i>
+	<i class="wi-day-sunny-overcast"></i>
+	<i class="wi-day-thunderstorm"></i>
+	<i class="wi-day-windy"></i>-->
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</main>
+
+<!-- 全局js -->
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script src="/js/layer/layer.js"></script>
+<script src="/js/coords-tool.js"></script>
+<script src="/js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+
+<script>
+//首页沙滩图片高度设置
+var body = document.getElementById('body_id');
+var img = document.getElementById('weather_img_id');
+img.style.height = body.clientHeight * 0.549 +'px';
+
+$('#search_city_button').click(function () {
+	var cityname = $("#search_city_input").val();
+	if(!$.trim(cityname)){ // "",null,undefined
+		parent.layer.msg('搜索城市不能为空！', {
+		    icon: 2,
+			time:2000
+		});
+		$("#search_city_input").val("");
+		$("#search_city_input").focus();
+	} else {
+		queryWeather(cityname, null, null);
+		$("#search_city_input").focus();
+	}
+});
+
+$.ajax({
+    type : "POST",
+    url : "https://api.map.baidu.com/location/ip",
+    async : true,
+    data : { //使用Json格式进行透传
+        "ak" : "Pa77c8TQ57E9C95Gs5bUEGdOwkLZKXfM",
+        "coor" : "gcj02",
+        '_': new Date().getTime()
+    },
+    dataType:"jsonp",
+    crossDomain: true,
+    success : function(result) {
+        if (result.status==0) {
+//      	console.log(result);
+			//国测局02(gcj02)坐标的纬度、经度
+			var gcj02_lat = result.content.point.y;
+			var gcj02_lon = result.content.point.x;
+			//转换成wgs84坐标，并取出纬度、经度
+        	var wgs84_coords = gcj02towgs84(gcj02_lat, gcj02_lon);
+        	var wgs84_lat = wgs84_coords[0];
+        	var wgs84_lon = wgs84_coords[1];
+        	// console.log(wgs84_lat);
+			// console.log(wgs84_lon);
+        	queryWeather(null, wgs84_lon, wgs84_lat);
+        } else {
+			parent.layer.msg('获取当前位置信息失败了！', {
+			    icon: 2,
+				time:2000
+			});
+        }
+    },
+    error : function(xhr,errorText,errorType) { //xhr:XMLHttpRequest对象   errorText:错误信息  erroType:（可选）捕获的异常对象
+    	parent.layer.msg('获取当前位置信息失败，请检查是否联网了！', {
+		    icon: 2,
+			time:2000
+		});
+    }
+});
+
+function queryWeather(cityname, lon, lat) {
+	$.ajax({
+        type : "POST",
+        url : "/common/queryWeather",
+        async : true,
+        data : { //使用Json格式进行透传
+        	"cityname" : cityname,
+        	"lon" : lon,
+        	"lat" : lat
+        },
+        dataType:"json",
+        success : function(result) {
+            if (result.code==0) {
+//          	console.log(result);
+            	var data = result.data;
+            	
+            	var city = data.today.city;
+            	$("#city_name_id").html(city);
+            	
+            	$("#today").children().remove();
+            	var now_temperature = data.sk.temp+'℃';
+            	var temperature = data.today.temperature;
+            	var weather = data.today.weather;
+            	var date = data.today.date_y;
+            	var week = data.today.week;
+            	var fa = data.today.weather_id.fa;
+            	var fb = data.today.weather_id.fb;
+    			$("#today").append("<div class='col-xs-4' style='float: left;'> <div class='vertical-align'> <i class='vertical-align-middle font-size-50 margin-top-20'> <img height='50' src='/weather/icons/"+fa+".png'><font size='4' color='#2298D9'>~</font><img height='50' src='/weather/icons/"+fb+".png'> </i> </div> </div> <div class='col-xs-8' style='float: left;'> <span class='font-size-40 blue-800'>"+now_temperature+"</span> <span class='font-size-18 blue-grey-700'>/</span> <span class='font-size-18 blue-grey-700'>"+temperature+"</span> <p class='font-size-14 margin-bottom-0'>"+weather+"&nbsp;&nbsp;"+date+"&nbsp;"+week+"</p> </div>");
+            	
+            	$("#future").children().remove();
+            	var future_days = data.future;
+            	for(var i=1; i < future_days.length; i++) {
+            		var week = future_days[i].week;
+            		var weather = future_days[i].weather;
+            		var temperature = future_days[i].temperature;
+            		var fa = future_days[i].weather_id.fa;
+            		var fb = future_days[i].weather_id.fb;
+            		$("#future").append("<div class='col-xs-2'> <div class='weather-day vertical-align'> <div class='vertical-align-middle font-size-16'> <div class='margin-bottom-10'>"+week+"</div> <i class='font-size-24 margin-bottom-10'> <img height='50' src='/weather/icons/"+fa+".png'><font size='4' color='#2298D9'>~</font><img height='50' src='/weather/icons/"+fb+".png'> </i> <div>"+weather+"&nbsp;"+temperature+"</div> </div> </div> </div>");
+            	}
+            	
+            } else {
+				parent.layer.msg('获取当前城市天气数据失败了！', {
+				    icon: 2,
+					time:2000
+				});
+	        }
+        }
+    });
+}
+
+// 通过H5获取客户端WGS84地理坐标
+/*var lat;
+var lon;
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(showPosition, showError);
+} else {
+	parent.layer.msg('获取天气数据失败了！', {
+	    icon: 2,
+		time:1000
+	});
+}
+function showPosition(position) {
+	lat = position.coords.latitude;
+	lon = position.coords.longitude;
+	
+	console.log(lat);
+	console.log(lon);
+	
+	$.ajax({
+        type : "POST",
+        url : "/common/getWeather",
+        async : false,
+        dataType:"json",
+        success : function(result) {
+            if (result.code==0) {
+//          	console.log(result);
+            	console.log(JSON.parse(result.data));
+            } else {
+				console.log(result.code);
+            }
+        }
+	});
+}
+function showError(error)
+{
+	var msg;
+	switch(error.code) 
+    {
+        case error.PERMISSION_DENIED:
+            msg="用户拒绝对获取地理位置的请求。"
+            break;
+        case error.POSITION_UNAVAILABLE:
+            msg="位置信息不可用。"
+            break;
+        case error.TIMEOUT:
+            msg="请求用户地理位置超时。"
+            break;
+        case error.UNKNOWN_ERROR:
+            msg="未知错误。"
+            break;
+    }
+    parent.layer.msg(msg, {
+	    icon: 2,
+		time:1000
+	});
+}*/
+
+</script>
+
+</body>
+</html>
