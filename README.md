@@ -1,6 +1,6 @@
 # spartacus
 
-![](https://img.shields.io/badge/build-passing-brightgreen.svg)![](https://img.shields.io/badge/version-1.0.0-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg)
+![](https://img.shields.io/badge/build-passing-brightgreen.svg) ![](https://img.shields.io/badge/version-1.0.0-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-000000.svg)
 
 spartacus是太阳系最好用的博客管理系统，通过一张图了解一下有哪些功能：[演示图](https://tret-1251733385.cos.ap-chengdu.myqcloud.com/yanshi.gif?_blank)
 
