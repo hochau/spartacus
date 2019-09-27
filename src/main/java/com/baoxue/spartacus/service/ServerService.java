@@ -67,7 +67,7 @@ public class ServerService {
 	    */
 	public BaseResp getServerStatus(String ip, Integer port, String device) throws BlogException {
 		try {
-			String url = ip + ":" + port + "/" + device + "?accesstoken=" + blogProperties.getApiAccesstoken();
+			String url = ip + ":" + port + "/" + device + "?appid=" + blogProperties.getApiAppid();
 			String resp = null;
 			try {
 				resp = HttpUtils.doGetMap("http://"+url, null);

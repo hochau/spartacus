@@ -82,8 +82,8 @@ public class Article implements Serializable {
 	
 	@Column
 	private String monthDay;
-	
-	@Column
+
+	@Column(columnDefinition="TEXT")
 	private String pictures; // 插图
 	
 	@Column(columnDefinition="TEXT")

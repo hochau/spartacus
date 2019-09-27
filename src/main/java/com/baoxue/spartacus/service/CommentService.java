@@ -475,6 +475,7 @@ public class CommentService {
 	public BaseResp forbid(CommentForbid forbid) throws BlogException {
 		try {
 			logger.info("forbid->开始加入评论黑名单...");
+			forbid.setId(Snowflake.generateId());
 			commentForbidRepository.saveAndFlush(forbid);
 			logger.info("forbid->导入成功！");
 			return new BaseResp(Globals.CODE_0, Globals.MSG_0);

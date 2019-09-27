@@ -77,8 +77,8 @@ public class BlogProperties {
     private String avgInterval;
     
     //调用远程python脚本服务的认证码
-    @Value("${api_accesstoken}")
-    private String apiAccesstoken;
+    @Value("${api_appid}")
+    private String apiAppid;
 
     //websocket
     @Value("${wb_endpoint}")

@@ -18,10 +18,10 @@
            FILEDEBUG对应debug级别，文件名以log-debug-xxx.log形式命名
            stdout将日志信息输出到控制上，为方便开发测试使用
     -->
-    <contextName>BLOG-CMS</contextName>
-    <property name="LOG_PATH" value="${catalina.home:-D:/BLOG-CMS-LOGS}" />
+    <contextName>SPARTACUS</contextName>
+    <property name="LOG_PATH" value="${catalina.home:-D:/SPARTACUS-LOGS}" />
     <!--设置系统日志目录-->
-    <property name="APPDIR" value="BLOG_CMS" />
+    <property name="APPDIR" value="SPARTACUS" />
 
     <!-- 日志记录器，日期滚动记录 -->
     <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
